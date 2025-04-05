@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #003193;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px; /* Makes the scrollbar thinner */
+  height: 8px; /* For horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* Light track color */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #170016; /* Dark purple color */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4e0048; /* Darker purple on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Makes scrollbar thinner */
+  scrollbar-color: #ffffff #270023; /* thumb and track color */
+}
+
+/* For Internet Explorer*/
+body {
+  scrollbar-face-color: #4e0048;
+  scrollbar-track-color: #f1f1f1;
+  scrollbar-width: thin;
 }

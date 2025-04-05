@@ -1,0 +1,159 @@
+.about-section {
+    background: linear-gradient(180deg, #000000, #000000, #0c0015);
+    color: #fff;
+    padding: 30px 6% 90px;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .about-heading {
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 900;
+    color: #fff;
+  }
+  
+  .accent {
+    color: #d800d8;
+    display: inline-block;
+  }
+  
+  .about-content {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .profile-img {
+    width: 336px;
+    filter: contrast(1.2) hue-rotate(13deg);
+    margin-top: 60px;
+    height: 534px;
+    object-fit: cover;
+    animation: floatAnimation 3s ease-in-out infinite;
+  }
+  
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .about-info {
+    flex: 2.5;
+    width: 680px;
+    text-align: justify;
+  }
+  
+  .about-info h3 {
+    font-size: 2.5rem;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: white;
+  }
+  
+  .text-block {
+    margin-bottom: 10px;
+  }
+  
+  .inline-paragraph {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1.8;
+    display: inline;
+    margin-right: 5px;
+  }
+  
+  .read-more-btn {
+    background-color: transparent;
+    border: none;
+    color: #e1a8e6;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    white-space: nowrap;
+  }
+  
+  .read-more-btn:hover {
+    color: #fff;
+  }
+  
+  .tech-stack {
+    margin-top: 3rem;
+    width: 100%;
+    position: relative;
+  }
+
+  .stack-title{
+    font-weight: bold;
+    color:#ffffff
+  }
+  
+  .tech-stack-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #d800d8;
+  }
+  
+  .tech-icons-scrollable {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 10px;
+  }
+  
+  .tech-icons-scrollable::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .tech-icons-scrollable:active {
+    cursor: grabbing;
+  }
+  
+  .tech-icons-container {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    width: max-content;
+  }
+  
+  .tech-icon-ab {
+    font-size: 2rem;
+    color: #ffffff;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  .tech-icon-ab:hover {
+    opacity: 1;
+    color: #d800d8;
+    transform: scale(1.2);
+  }
