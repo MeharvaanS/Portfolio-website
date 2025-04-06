@@ -119,7 +119,7 @@ const Projects = () => {
     {
       id: 1,
       title: "Mac Autos",
-      description: "A responsive dark-themed website for MAC Auto Company featuring a futuristic interface with real-time customer reviews. Developed with React.js frontend, Express.js backend, and MongoDB database to showcase their premium automotive services with modern aesthetics.",
+      description: "A responsive dark-themed website for MAC Auto Company featuring a futuristic UI with real-time customer reviews. Developed with React.js frontend, Express.js backend, and MongoDB database to showcase their automotive services with modern aesthetics.",
       tags: ["React", "Express", "MongoDB", "GIT"],
       image: process.env.PUBLIC_URL + "/images/p1.png",
       githubLink: "https://github.com/MeharvaanS/AutoServ",
