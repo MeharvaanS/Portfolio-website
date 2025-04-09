@@ -14,10 +14,10 @@ const experiences = [
     period: "Aug 2023 - Current",
     location: "Ottawa, ON",
     highlights: [
-      "20k+ lines of Blazor/.NET Core code",
-      "Optimized SQL queries by 20%",
-      "98% bug resolution rate",
-      "Reduced post-launch issues by 15%"
+      "Contributed over 20,000 lines of Blazor, .NET Core, JavaScript, and SQL code for critical projects in an Agile environment",
+      "Developed and optimized complex SQL scripts, improving query performance by 20%",
+      "Achieved a 98% bug resolution rate, maintaining a post-deployment bug occurrence rate of under 2%",
+      "Reduced post-launch issues by 15% through rigorous testing and proactive code reviews"
     ],
     skills: ["Blazor", ".NET Core", "SQL Server", "JS"]
   },
@@ -27,10 +27,10 @@ const experiences = [
     period: "Dec 2022 - Apr 2023",
     location: "Burlington, ON",
     highlights: [
-      "Automated testing with Python/Selenium",
-      "Network protocol testing (SNMP/TCP/IP)",
-      "Developed efficiency tools",
-      "Reduced testing time by 40%"
+      "Developed and executed automated testing scripts using Python and Selenium",
+      "Worked with network protocols like SNMP, TCP/IP, HTTP, DNS, and DHCP for comprehensive testing",
+      "Developed console applications and efficiency tools, streamlining daily client operations",
+      "Reduced manual testing time by 40% through automation and increased testing efficiency"
     ],
     skills: ["Python", "Selenium", "SNMP", "Bash"]
   },
@@ -40,10 +40,9 @@ const experiences = [
     period: "Sept 2021 - Dec 2024",
     location: "Oakville, ON",
     highlights: [
-      "Graduated with 3.8/4.0 GPA in Software Development & Networking Engineering",
-      "Enterprise application development with multiple languages",
-      "Cloud computing with AWS/GCP",
-      "Android/IOS app development"
+      "Graduated with a 3.78/4.0 GPA in Software Development and Networking Engineering, named to the Dean’s Honours List",
+      "Developed enterprise applications using multiple languages, including C#, Java, JavaScript, and Python",
+      "Worked with cloud platforms like AWS and GCP for scalable and efficient solutions"
     ],
     skills: ["JAVA", "AWS", "UI/UX", "Big Data"]
   }
