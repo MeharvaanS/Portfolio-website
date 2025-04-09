@@ -15,7 +15,7 @@ const experiences = [
     location: "Ottawa, ON",
     highlights: [
       "Contributed over 20,000 lines of Blazor, .NET Core, JavaScript, and SQL code for critical projects in an Agile environment",
-      "Developed and optimized complex SQL scripts, improving query performance by 20%",
+      "Developed and optimized complex SQL scripts to create efficient database schemas",
       "Achieved a 98% bug resolution rate, maintaining a post-deployment bug occurrence rate of under 2%",
       "Reduced post-launch issues by 15% through rigorous testing and proactive code reviews"
     ],
@@ -29,8 +29,8 @@ const experiences = [
     highlights: [
       "Developed and executed automated testing scripts using Python and Selenium",
       "Worked with network protocols like SNMP, TCP/IP, HTTP, DNS, and DHCP for comprehensive testing",
-      "Developed console applications and efficiency tools, streamlining daily client operations",
-      "Reduced manual testing time by 40% through automation and increased testing efficiency"
+      "Developed console applications and tools, streamlining daily client operations",
+      "Reduced manual testing by 40% through automation and increased testing efficiency"
     ],
     skills: ["Python", "Selenium", "SNMP", "Bash"]
   },
@@ -42,7 +42,8 @@ const experiences = [
     highlights: [
       "Graduated with a 3.78/4.0 GPA in Software Development and Networking Engineering, named to the Dean’s Honours List",
       "Developed enterprise applications using multiple languages, including C#, Java, JavaScript, and Python",
-      "Worked with cloud platforms like AWS and GCP for scalable and efficient solutions"
+      "Worked with cloud platforms like AWS and GCP for scalable and efficient solutions",
+      "Gained a year of Coop experience in industry, applying skills in real-world projects"
     ],
     skills: ["JAVA", "AWS", "UI/UX", "Big Data"]
   }
