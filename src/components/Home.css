@@ -284,3 +284,9 @@
     width: 100%;
   }
 }
+
+@media (min-width: 1920px){
+  .home-section{
+    padding: 0px;
+  }
+}

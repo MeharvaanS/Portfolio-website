@@ -285,3 +285,22 @@
     height: 420px !important;
   }
 }
+
+@media (min-width: 1920px){
+  .about-content {
+    gap: 250px !important;
+  }
+  .about-section::before{
+    transform: rotate(24deg);
+    top: 170px;
+    width: 700px;
+    height: 250px
+  }
+  .about-heading{
+    margin-bottom: 100px;
+  }
+  .section-heading img {
+    right: -244px;
+    width: 455px;
+  }
+}

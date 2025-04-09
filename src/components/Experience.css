@@ -249,3 +249,9 @@
     font-size: 0.7rem;
   }
 }
+
+@media (min-width: 1920px){
+  .experience-container {
+    gap: 5rem;
+  }
+}
