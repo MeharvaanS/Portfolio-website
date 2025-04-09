@@ -41,7 +41,7 @@ const experiences = [
     location: "Oakville, ON",
     highlights: [
       "Graduated with a 3.78/4.0 GPA in Software Development and Networking Engineering, named to the Dean’s Honours List",
-      "Developed enterprise applications using multiple languages, including C#, Java, JS, and Python",
+      "Developed enterprise applications using languages like C#, Java, JS, and Python",
       "Worked with cloud platforms like AWS and GCP for scalable and efficient solutions",
       "Gained a year of Coop experience in industry, applying skills in real-world projects"
     ],
