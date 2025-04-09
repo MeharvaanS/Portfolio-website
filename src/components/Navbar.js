@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -48,23 +48,48 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className="navbar">
       <div className="navbar-container">
-        {/* Centered Navigation Links */}
-        <ul className="navbar-menu">
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <button
-                className={`navbar-link ${activeSection === item.id ? 'active' : ''}`}
-                onClick={() => scrollTo(item.id)}
-              >
-                {item.label}
-              </button>
-            </li>
-          ))}
-        </ul>
+        {/* Logo on the left - completely static */}
+        <div className="navbar-logo">
+          <img 
+            src="/images/logo.png" 
+            alt="Logo" 
+            className="logo-image"
+            onClick={() => scrollTo('home')}
+          />
+        </div>
 
-        {/* Mobile Menu Button (positioned absolutely) */}
+        {/* Centered Navigation Links - will be the only part affected by scroll */}
+        <div className={`navbar-center ${scrolled ? 'scrolled' : ''}`}>
+          <ul className="navbar-menu">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <button
+                  className={`navbar-link ${activeSection === item.id ? 'active' : ''}`}
+                  onClick={() => scrollTo(item.id)}
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Social Icons on the right - completely static */}
+        <div className="navbar-social">
+          <a href="https://github.com/MeharvaanS" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="social-icon" />
+          </a>
+          <a href="https://www.linkedin.com/in/meharvaansingh/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="social-icon" />
+          </a>
+          <a href="mailto:sahimeharvaan@gmail.com">
+            <FaEnvelope className="social-icon" />
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
         <button 
           className="navbar-toggle"
           onClick={() => setIsOpen(!isOpen)}
@@ -84,6 +109,17 @@ const Navbar = () => {
               {item.label}
             </button>
           ))}
+          <div className="mobile-social">
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <FaGithub className="social-icon" />
+            </a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="social-icon" />
+            </a>
+            <a href="mailto:your.email@example.com">
+              <FaEnvelope className="social-icon" />
+            </a>
+          </div>
         </div>
       </div>
     </nav>

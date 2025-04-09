@@ -1,46 +1,39 @@
 .experience-section {
-  padding: 2.5rem 2rem;
-  background: linear-gradient(180deg, #0c0014, #000, #000);
+  padding: 2rem 1rem;
+  padding-bottom: 6rem;
+  background: linear-gradient(180deg, #0e000c, #000, #000);
   overflow: hidden;
 }
 
 .experience-section h2 {
   text-align: center;
-  font-size: 3.5rem;
-  margin-bottom: 5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: 130px;
   font-family: sans-serif;
   color: white;
   font-weight: 900;
-  position: relative;
 }
 
 .highlight-exp {
   color: #d800d8;
-  font-size: 3.5rem;
-  font-weight: 900;
-  font-family: sans-serif;
+  font-size: inherit;
 }
 
-.scrolling-container {
-  width: 150%;
-  position: relative;
-  margin-left: 0;
-  left: -140px;
-  padding: 2rem 0;
-}
-
-.scrolling-track {
+.experience-container {
   display: flex;
-  gap: 2rem;
-  width: max-content;
-  will-change: transform;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .experience-card {
   min-width: 280px;
-  height: 320px;
-  flex-shrink: 0;
-  background: rgba(100, 17, 107, 0.176);
+  max-width: 350px;
+  height: 340px;
+  background: rgba(151, 53, 178, 0.075);
   border-radius: 15px;
   padding: 1.5rem;
   transition: all 0.3s ease;
@@ -49,6 +42,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-front {
@@ -62,9 +56,9 @@
 
 .card-front h3 {
   color: #ffffff;
+  margin-bottom: 44px;
   font-size: 1.3rem;
-  line-break:normal;
-  margin-bottom: 2.5rem 0;
+  margin: 1.5rem 0;
   font-weight: 500;
   max-width: 270px;
   font-family: sans-serif;
@@ -76,7 +70,7 @@
   color: #d400c6;
   font-family: sans-serif;
   font-size: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .location {
@@ -87,8 +81,8 @@
 }
 
 .company-logo {
-  width: 120px;
-  height: 60px;
+  width: 160px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,11 +91,10 @@
 }
 
 .company-logo img {
-  max-width: 200%;
-  max-height: 200%;
-  margin-top: 25px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  margin-bottom: 70px;
+  margin: 25px 0 50px;
 }
 
 .card-details {
@@ -111,11 +104,12 @@
   right: 0;
   bottom: 0;
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.596);
+  background: rgba(0, 0, 0, 0.8);
   opacity: 0;
   transition: opacity 0.3s ease;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(2px);
 }
 
 .experience-card:hover .card-front {
@@ -137,7 +131,6 @@
   width: 55px;
   height: 55px;
   object-fit: contain;
-  
 }
 
 .company {
@@ -187,77 +180,72 @@
   padding: 6px 12px;
   border-radius: 4px;
   font-size: 0.8rem;
-  will-change: transform;
+  transition: transform 0.2s ease;
 }
 
-.scrolling-container::before,
-.scrolling-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100px;
-  z-index: 2;
-  pointer-events: none;
+.skill-tag:hover {
+  transform: translateY(-2px);
 }
 
-.scrolling-container::before {
-  left: 0;
-  background: linear-gradient(90deg, #100113 0%, transparent 100%);
-}
 
-.scrolling-container::after {
-  right: 0;
-  background: linear-gradient(90deg, transparent 0%, #100113 100%);
-}
 
-@media (max-width: 768px) {
-  .experience-section h2 {
-    font-size: 2.5rem;
-  }
-  
-  .highlight-exp {
-    font-size: 2.5rem;
-  }
-  
+/* Tablet - 2 cards in a row */
+@media (max-width: 1024px) and (min-width: 768px) {
   .experience-card {
-    min-width: 260px;
-    height: 300px;
-  }
-  
-  .scrolling-container {
-    width: 120%;
-    left: -80px;
-  }
-  
-  .scrolling-container::before,
-  .scrolling-container::after {
-    width: 50px;
+    flex: 0 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
   }
 }
 
-@media (max-width: 480px) {
-  .experience-card {
-    min-width: 240px;
-    height: 280px;
-    padding: 1rem;
+/* Mobile - stacked vertically */
+@media (max-width: 767px) {
+  .experience-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
   }
-  
+  .experience-card {
+    width: 70%;
+    max-width: 400px;
+    height: 490px;
+  }
+  .company-logo {
+    width: 100px;
+    height: 110px;
+  }
+  .company-logo img {
+    margin: 15px 0 40px;
+  }
   .card-front h3 {
+    margin: 1rem 0;
     font-size: 1.2rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .experience-section h2 {
+    font-size: 3rem;
+    margin-top: 40px;
+    margin-bottom: 120px;
+  }
+
+  .experience-section {
+    padding: 2rem 0.5rem;
+    padding-bottom: 90px;
+  }
+  .experience-card {
+    height: 320px;
+    padding: 1.2rem;
+  }
+  .highlights li {
+    font-size: 0.85rem;
+  }
+  .skills-container {
+    gap: 3px;
   }
   
   .skill-tag {
     font-size: 0.7rem;
-    padding: 4px 8px;
-  }
-  
-  .detail-logo {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .company {
-    font-size: 1.1rem;
   }
 }

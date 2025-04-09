@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Projects.css';
-import { FaEye, FaGithub } from 'react-icons/fa';
+import { FaEye, FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import { 
   SiReact, SiExpress, SiMongodb, SiFirebase, SiOpenai, SiGit, SiPostman, 
-  SiJavascript, SiCss3, SiHtml5, SiGooglecloud 
+  SiJavascript, SiCss3, SiHtml5, SiGooglecloud,
 } from 'react-icons/si';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -25,16 +25,84 @@ const getTechIcon = (tech) => {
   }
 };
 
+const ProjectModal = ({ project, onClose }) => {
+  return (
+    <motion.div 
+      className="project-modal-overlay"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+    >
+      <motion.div 
+        className="project-modal-content"
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button className="modal-close-btn" onClick={onClose}>
+          <FaTimes />
+        </button>
+        
+        <div className="modal-image-container">
+          <img src={project.image} alt={project.title} />
+        </div>
+        
+        <div className="modal-info">
+          <h3>{project.title}</h3>
+          
+          <div className="modal-tags">
+            {project.tags.map((tag) => (
+              <div key={tag} className="tech-tag">
+                {getTechIcon(tag)}
+                <span className="tech-name">{tag}</span>
+              </div>
+            ))}
+          </div>
+          
+          <p className="modal-description">{project.description}</p>
+          
+          <div className="modal-buttons">
+            <a 
+              href={project.demoLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="modal-primary-btn modal-live-btn"
+            >
+              <FaExternalLinkAlt className="modal-live-icon" />
+              Live Demo
+            </a>
+            <a 
+              href={project.githubLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="modal-primary-btn modal-github-btn"
+            >
+              <FaGithub className="modal-github-icon" />
+              View Code
+            </a>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const ProjectItem = ({ project }) => {
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true
   });
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div ref={ref} className="project-row">
+      {isModalOpen && <ProjectModal project={project} onClose={() => setIsModalOpen(false)} />}
+      
       <motion.div 
-        className="laptop-container"
+        className="project-image-container"
         initial={{ x: '-100vw', opacity: 0 }}
         animate={inView ? { x: 0, opacity: 1 } : {}}
         transition={{ 
@@ -46,25 +114,11 @@ const ProjectItem = ({ project }) => {
           restDelta: 0.001
         }}
       >
-        <div className="laptop-wrapper">
-          <div className="laptop-screen">
-            <img 
-              src={project.image} 
-              alt={project.title} 
-              className="project-image" 
-            />
-          </div>
-          <div className="laptop-base">
-            <div className="laptop-keyboard">
-              <div className="key-row">
-                <div className="key"></div>
-                <div className="key"></div>
-                <div className="key"></div>
-              </div>
-              <div className="trackpad"></div>
-            </div>
-          </div>
-        </div>
+        <img 
+          src={project.image} 
+          alt={project.title} 
+          className="project-image-simple" 
+        />
       </motion.div>
 
       <motion.div 
@@ -81,7 +135,6 @@ const ProjectItem = ({ project }) => {
         }}
       >
         <h3>{project.title}</h3>
-        <p>{project.description}</p>
         <div className="tags">
           {project.tags.map((tag) => (
             <div key={tag} className="tech-tag">
@@ -91,15 +144,20 @@ const ProjectItem = ({ project }) => {
           ))}
         </div>
         <div className="project-buttons">
-          <a 
-            href={project.demoLink} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <button 
+            onClick={() => setIsModalOpen(true)}
             className="primary-btn demo-btn"
           >
             <FaEye className="button-icon" />
             View
-          </a>
+          </button>
+          <button 
+            onClick={() => window.open(project.demoLink, '_blank', 'noopener,noreferrer')}
+            className="primary-btn live-btn"
+          >
+            <FaExternalLinkAlt className="live-icon" />
+            Live
+          </button>
           <a 
             href={project.githubLink} 
             target="_blank" 

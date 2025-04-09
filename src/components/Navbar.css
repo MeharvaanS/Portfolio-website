@@ -4,46 +4,88 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 2.5rem 0;
+  padding: 1rem 0;
   z-index: 1000;
   background: transparent;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.navbar.scrolled {
-  background: transparent;
-  padding: 1rem 0;
 }
 
 .navbar-container {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* Centered Navigation Menu */
+/* Logo Styles - Fixed */
+.navbar-logo {
+  z-index: 1001;
+  flex: 0 0 auto;
+}
+
+.logo-image {
+  height: 40px;
+  transform: rotate(350deg) scale(1.1) skewX(1deg);
+  margin-left: 20px;
+  width: auto;
+  opacity: 0.6;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Centered Navigation Area */
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
 .navbar-menu {
   display: flex;
-  justify-content: center;
   width: 410px;
   border-radius: 30px;
   list-style: none;
   padding: 0.3em;
-  margin: 0 auto;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: all 0.3s ease-in-out;
+  margin: 0;
+  justify-content: center;
 }
 
-.navbar.scrolled .navbar-menu {
+.navbar-center.scrolled .navbar-menu {
   backdrop-filter: blur(8px);
   padding: 8px 62px;
   background: rgb(43 0 46 / 43%);
   padding-top: 11px;
 }
 
+/* Social Icons - Fixed */
+.navbar-social {
+  display: flex;
+  gap: 0.2rem;
+  z-index: 1001;
+  flex: 0 0 auto;
+}
+
+.social-icon {
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+/* Navigation Links */
 .navbar-link {
   position: relative;
   background: none;
@@ -58,20 +100,17 @@
   transform: translateY(0);
 }
 
-/* Hover Effect - Subtle lift and color change */
 .navbar-link:hover {
   transform: translateY(-2px);
 }
 
-/* Active Link Effect - Smooth background transition */
 .navbar-link.active {
-  background-color: rgba(226, 232, 240, 0.12);
+  background-color: rgb(255 255 255 / 6%);
   color: white;
   transform: translateY(-2px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Underline animation */
 .navbar-link::after {
   content: '';
   position: absolute;
@@ -87,10 +126,6 @@
 /* Mobile Menu Button */
 .navbar-toggle {
   display: none;
-  position: absolute;
-  right: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
   background: none;
   border: none;
   color: white;
@@ -107,7 +142,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(15, 23, 42, 0.98);
+  background: black;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -127,9 +162,41 @@
   font-size: 1.5rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+.mobile-social {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
   .navbar-menu {
+    max-width: 400px;
+  }
+  
+  .navbar-link {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 880px) {
+  .navbar-menu {
+    max-width: 350px;
+  }
+  
+  .navbar-link {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .social-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-center, .navbar-social {
     display: none;
   }
 
@@ -139,5 +206,59 @@
 
   .navbar-mobile {
     display: flex;
+  }
+  
+  .navbar-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    position: absolute;
+    left: 1.5rem;
+    top: 0.2rem;
+  }
+  
+  .navbar-toggle {
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;
+  }
+  
+  .logo-image {
+    height: 35px;
+    margin-left: 0;
+  }
+  
+  .navbar-mobile .navbar-link {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+  
+  .mobile-social {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar-container {
+    padding: 0 0.8rem;
+  }
+  
+  .logo-image {
+    height: 32px;
+  }
+  
+  .navbar-toggle {
+    font-size: 1.6rem;
+  }
+  
+  .navbar-mobile .navbar-link {
+    font-size: 1.1rem;
+  }
+  
+  .mobile-social .social-icon {
+    font-size: 1.6rem;
   }
 }

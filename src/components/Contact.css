@@ -76,7 +76,6 @@
 
 .contact-form {
     display: flex;
-    width: 500px;
     flex-direction: column;
     gap: 2.5rem;
 }
@@ -117,13 +116,13 @@
 }
 
 .form-group textarea {
-    height: 19px;
+    height: 21px;
     resize: vertical;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #888;
+    color: #787878c8;
 }
 
 /* Submit Button */
@@ -174,7 +173,8 @@
     background: linear-gradient(180deg, #120012, #1e001d);
 }
 
-/* Responsive Adjustments */
+/* ==================== Contact Section Responsive Styles ==================== */
+/* Desktop Contact (min-width: 768px) */
 @media (min-width: 768px) {
     .contact-content {
         flex-direction: row;
@@ -186,7 +186,70 @@
     }
 }
 
-/* Footer Styles */
+/* Mobile Contact (up to 768px) */
+@media only screen and (max-width: 768px) {
+    .contact-heading {
+        margin-top: 30px !important;
+        margin-bottom: 110px !important;
+        font-size: 3rem !important;
+    }
+
+    .form-group {
+        width: 85%;
+    }
+
+    .highlight-contact {
+        font-size: 3rem !important;
+    }
+    
+    .contact-content {
+        flex-direction: column !important;
+    }
+    
+    .image-container {
+        height: 450px !important;
+        margin-bottom: 20px;
+    }
+    
+    .contact-image {
+        width: 90% !important;
+        margin-bottom: -55px;
+    }
+
+    .submit-button {
+        width: 85% !important;
+    }
+    
+    .form-container {
+        padding: 0 !important;
+        width: 100%;
+        padding-bottom: 60px !important;
+    }
+    
+    .contact-form {
+        width: 100% !important;
+        align-items: center;
+        gap: 1.5rem !important;
+    }
+    
+    .form-group input, 
+    .form-group textarea {
+        padding: 0.7rem 0.2em !important;
+    }
+}
+  
+/* Tablet Contact (768px - 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .contact-form {
+        width: 90% !important;
+    }
+    
+    .image-container {
+        height: 400px !important;
+    }
+}
+
+/* ==================== Footer Styles ==================== */
 .site-footer {
     background: linear-gradient(180deg, rgb(29 0 28), rgb(51 0 48 / 76%), #43003d);
     padding: 1.5rem 2rem;
@@ -195,8 +258,6 @@
 }
 
 .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -209,12 +270,33 @@
 }
 
 .social-icon {
-    color: rgb(176, 176, 176); /* white by default */
+    color: rgb(176, 176, 176);
     margin-right: 25px;
     width: 26px;
     background-color: transparent;
 }
 
 .social-icon:hover {
-    color: #ffffff; /* dark pink on hover */
+    color: #ffffff;
+}
+
+/* Mobile Footer (up to 768px) */
+@media only screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+    
+    .social-icon {
+        margin: 0 12px !important;
+        font-size: 1.3rem !important;
+    }
+}
+  
+/* Tablet Footer (768px - 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .footer-content {
+        padding: 0 2rem !important;
+    }
 }
