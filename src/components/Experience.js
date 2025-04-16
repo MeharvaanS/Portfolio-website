@@ -9,12 +9,12 @@ const companyLogos = {
 
 const experiences = [
   {
-    title: "IT Technician",
+    title: "Full Stack Developer",
     company: "Health Canada",
     period: "Aug 2023 - Mar 2025",
     location: "Ottawa, ON",
     highlights: [
-      "Contributed over 5k lines of Blazor, .NET Core, JavaScript, and SQL code for critical projects in an Agile environment",
+      "Contributed over 7k lines of Blazor, .NET Core, JavaScript, and SQL code for critical projects in an Agile environment",
       "Developed and optimized complex SQL scripts to create efficient database schemas",
       "Achieved a 98% bug resolution rate, maintaining a post-deployment bug occurrence rate of under 2%",
       "Reduced post-launch issues by 15% through rigorous testing and proactive code reviews"
