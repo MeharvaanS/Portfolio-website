@@ -110,13 +110,13 @@ const Navbar = () => {
             </button>
           ))}
           <div className="mobile-social">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/MeharvaanS" target="_blank" rel="noopener noreferrer">
               <FaGithub className="social-icon" />
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/meharvaansingh/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="social-icon" />
             </a>
-            <a href="mailto:your.email@example.com">
+            <a href="mailto:sahimeharvaan@gmail.com">
               <FaEnvelope className="social-icon" />
             </a>
           </div>
