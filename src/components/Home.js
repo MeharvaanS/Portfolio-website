@@ -129,7 +129,7 @@ const Home = () => {
       {/* Video Background */}
       <div className="video-background">
         <video autoPlay loop muted playsInline>
-          <source src="https://cdn.pixabay.com/video/2025/03/23/266865_tiny.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/7898649/7898649-sd_640_360_15fps.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay"></div>
