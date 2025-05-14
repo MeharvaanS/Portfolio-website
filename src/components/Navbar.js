@@ -6,8 +6,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isMounted, setIsMounted] = useState(false);
 
+  // Mount animation and scroll event setup
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsMounted(true);
+    }, 100);
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
@@ -25,7 +31,10 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const scrollTo = (sectionId) => {
@@ -48,7 +57,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isMounted ? 'navbar--visible' : ''}`}>
       <div className="navbar-container">
         {/* Logo on the left - completely static */}
         <div className="navbar-logo">

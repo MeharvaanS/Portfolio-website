@@ -1,34 +1,12 @@
+import { useRef} from 'react';
 import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import './Home.css';
 
 const Home = () => {
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
   const mousePosRef = useRef({ x: 0, y: 0 });
-  const [typedText, setTypedText] = useState('');
-  const [showTitle, setShowTitle] = useState(false);
-  const name = "SINGH";
-
-  useEffect(() => {
-    // Start typing animation after 1 second
-    const timer = setTimeout(() => {
-      setShowTitle(true);
-      let i = 0;
-      const typingInterval = setInterval(() => {
-        if (i < name.length) {
-          setTypedText(name.substring(0, i + 1));
-          i++;
-        } else {
-          clearInterval(typingInterval);
-        }
-      }, 150); // Adjust typing speed here
-    }, 1000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -138,71 +116,21 @@ const Home = () => {
       {/* Canvas Animation */}
       <canvas ref={canvasRef} className="particle-canvas"></canvas>
       
-      {/* Floating Elements */}
-      <div className="floating-elements">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="floating-shape"
-            initial={{ 
-              y: Math.random() * 100 - 50,
-              x: Math.random() * 100 - 50,
-              rotate: Math.random() * 360
-            }}
-            animate={{
-              y: [0, Math.random() * 100 - 50, 0],
-              x: [0, Math.random() * 100 - 50, 0],
-              rotate: [0, Math.random() * 360],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "linear"
-            }}
-          />
-        ))}
-      </div>
-      
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="home-content"
-      >
-        <motion.h1 
-          className="home-title"
-          whileHover={{ scale: 1.02 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        >
-          MEHARVAAN {showTitle && <span className="highlight">{typedText}</span>}
-        </motion.h1>
+      <div className="home-content">
+        <h1 className="home-title">
+          MEHARVAAN <span className="highlight">SINGH</span>
+        </h1>
         
-        <motion.h2 
-          className="home-subtitle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
+        <h2 className="home-subtitle">
           Full stack Developer | UI/UX Enthusiast
-        </motion.h2>
+        </h2>
         
-        <motion.p 
-          className="home-description"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-        >
+        <p className="home-description">
           I create beautiful, responsive websites with cutting-edge technologies.
-  Experienced in full-stack development with a versatile skillset.
-        </motion.p>
+          Experienced in full-stack development with a versatile skillset.
+        </p>
         
-        <motion.div 
-          className="home-buttons"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.8 }}
-        >
+        <div className="home-buttons">
           <motion.button 
             className="primary-btn"
             onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
@@ -214,10 +142,9 @@ const Home = () => {
           <motion.button 
             className="secondary-btn"
             onClick={() => {
-              // Create a temporary anchor element
               const link = document.createElement('a');
-              link.href = '/Meharvaan_Singh_Resume.pdf'; // Update this path to your actual CV file
-              link.download = 'Meharvaan_Singh_Resume.pdf'; // This will be the suggested filename for download
+              link.href = '/Meharvaan_Singh_Resume.pdf';
+              link.download = 'Meharvaan_Singh_Resume.pdf';
               document.body.appendChild(link);
               link.click();
               document.body.removeChild(link);
@@ -227,8 +154,8 @@ const Home = () => {
           >
             Download CV
           </motion.button>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 };

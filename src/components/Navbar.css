@@ -6,7 +6,18 @@
   right: 0;
   padding: 1rem 0;
   z-index: 1000;
-  background: transparent;
+  background: transparent; 
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 
+    transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+    ;
+  will-change: transform;
+}
+
+.navbar--visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .navbar-container {
@@ -52,6 +63,7 @@
   display: flex;
   width: 410px;
   border-radius: 30px;
+  gap: 20px;
   list-style: none;
   padding: 0.3em;
   margin: 0;
@@ -60,8 +72,8 @@
 
 .navbar-center.scrolled .navbar-menu {
   backdrop-filter: blur(8px);
-  padding: 8px 62px;
-  background: rgb(43 0 46 / 43%);
+  padding: 8px 103px;
+  background: rgb(0 0 0 / 32%);
   padding-top: 11px;
 }
 
@@ -205,6 +217,7 @@
 
   .navbar-mobile {
     display: flex;
+    height:100vh
   }
   
   .navbar-container {
